@@ -1,0 +1,27 @@
+{
+  "name": "w35-activity-02-pokemon-json",
+  "version": "1.0.0",
+  "description": "Pokemon JSON Parser - Master complex JSON data structures with Pokemon!",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "test": "echo 'Open http://localhost:8000 in your browser'"
+  },
+  "keywords": [
+    "api",
+    "json",
+    "pokemon",
+    "javascript",
+    "fetch",
+    "data-parsing",
+    "education"
+  ],
+  "author": "W3.5 API Integration Course",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "stackblitz": {
+    "startCommand": "echo 'Open the preview to see your Pokemon JSON Parser!'"
+  }
+}

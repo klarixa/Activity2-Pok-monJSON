@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon JSON Parser</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>⚡ Pokemon JSON Parser</h1>
+            <p>Master JSON data structures and the fetch API with Pokemon!</p>
+        </header>
+
+        <main class="main-content">
+            <div class="sidebar">
+                <!-- Pokemon Search Section -->
+                <div class="search-panel">
+                    <h2>🔍 Pokemon Search</h2>
+                    <div class="search-form">
+                        <input type="text" id="pokemonInput" placeholder="Enter Pokemon name or ID" />
+                        <button id="searchBtn" class="btn primary">Search Pokemon</button>
+                    </div>
+
+                    <!-- Quick Access Pokemon -->
+                    <div class="quick-access">
+                        <h3>Quick Access</h3>
+                        <div class="pokemon-grid">
+                            <button class="pokemon-btn" data-pokemon="pikachu">⚡ Pikachu</button>
+                            <button class="pokemon-btn" data-pokemon="charizard">🔥 Charizard</button>
+                            <button class="pokemon-btn" data-pokemon="blastoise">💧 Blastoise</button>
+                            <button class="pokemon-btn" data-pokemon="venusaur">🌱 Venusaur</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JSON Practice Section -->
+                <div class="json-panel">
+                    <h2>📊 JSON Practice</h2>
+                    <div class="json-buttons">
+                        <button id="showRawBtn" class="btn secondary">Show Raw JSON</button>
+                        <button id="parseStatsBtn" class="btn secondary">Parse Stats Only</button>
+                        <button id="parseMovesBtn" class="btn secondary">Parse Moves</button>
+                        <button id="parseTypesBtn" class="btn secondary">Parse Types</button>
+                    </div>
+                </div>
+
+                <!-- Random Features -->
+                <div class="random-panel">
+                    <h2>🎲 Random Features</h2>
+                    <div class="random-buttons">
+                        <button id="randomPokemonBtn" class="btn tertiary">Random Pokemon</button>
+                        <button id="compareBtn" class="btn tertiary">Compare Two Pokemon</button>
+                        <button id="teamBuilderBtn" class="btn tertiary">Build Team (6 Pokemon)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <!-- Loading State -->
+                <div id="loading" class="loading hidden">
+                    <div class="pokeball-spinner"></div>
+                    <p>Catching Pokemon...</p>
+                </div>
+
+                <!-- Results Display -->
+                <div id="results" class="results-container">
+                    <div class="welcome-screen">
+                        <h2>Welcome to Pokemon JSON Parser! 🎯</h2>
+                        <div class="learning-objectives">
+                            <h3>What you'll learn:</h3>
+                            <ul>
+                                <li>📋 Parse complex JSON data structures</li>
+                                <li>🔄 Use async/await with fetch API</li>
+                                <li>📊 Extract specific data from nested objects</li>
+                                <li>🎨 Display dynamic content with JavaScript</li>
+                                <li>⚡ Handle arrays and objects in JSON responses</li>
+                            </ul>
+                        </div>
+                        <div class="get-started">
+                            <p>Search for a Pokemon above to get started, or try these:</p>
+                            <div class="suggestions">
+                                <span class="suggestion" onclick="searchPokemon('ditto')">Ditto</span>
+                                <span class="suggestion" onclick="searchPokemon('mew')">Mew</span>
+                                <span class="suggestion" onclick="searchPokemon('dragonite')">Dragonite</span>
+                                <span class="suggestion" onclick="searchPokemon('lucario')">Lucario</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fallback Content -->
+                <div id="fallback" class="fallback-content hidden">
+                    <h2>🚧 API Practice Mode</h2>
+                    <p>API is unavailable, but you can still practice with sample JSON data!</p>
+                    <div class="sample-json">
+                        <h3>Sample Pokemon JSON Structure:</h3>
+                        <pre id="sampleJson"></pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by <a href="https://pokeapi.co/" target="_blank">PokéAPI</a> 🚀</p>
+            <p>Perfect for learning JSON parsing and API integration!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
